@@ -1087,7 +1087,7 @@ public class AudioService extends IAudioService.Stub {
             }
 
             if (!checkSafeMediaVolume(streamTypeAlias, index, device)) {
-                displaySafeVolumeWarning(flags);
+                displaySafeVolumeWarning(flags | AudioManager.FLAG_SHOW_UI);
                 mPendingVolumeCommand = new StreamVolumeCommand(
                                                     streamType, index, flags, device);
             } else {
